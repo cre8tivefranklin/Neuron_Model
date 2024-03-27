@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.closer{
+    display: none;
+}
+
+#toggle_main, #toggle_about{
+    text-align: center;
+    padding: 1.5%;
+}
+.container {
+    display: flex;
+    height: 100vh;
+  }
+.main_{
+    /* margin: 100px; */
+    overflow: auto;
+    height: 90vh;
+}
+#sphere, #neuron{
+    border-radius: 5px;
+    /* padding: 20px; */
+    z-index: 0;
+    border: solid black 1px;
+}
+
+
+#sphere::-webkit-scrollbar,
+#neuron::-webkit-scrollbar,
+.main_::-webkit-scrollbar, 
+.contaier::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+#sphere::-webkit-scrollbar-thumb,
+#neuron::-webkit-scrollbar-thumb,
+.main_::-webkit-scrollbar-thumb,
+.mobile::-webkit-scrollbar-thumb {
+    background-color: #999; /* Thumb color */
+}
+
+#sphere::-webkit-scrollbar-track,
+#neuron::-webkit-scrollbar-track,
+.main_::-webkit-scrollbar-track,
+.mobile::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track color */
+}
+
+#sphere::-webkit-scrollbar-thumb:hover,
+#neuron::-webkit-scrollbar-thumb:hover,
+.main_::-webkit-scrollbar-thumb:hover,
+.mobile::-webkit-scrollbar-thumb:hover{
+    background-color: #555; /* Thumb color on hover */
+}
+
+.summary{
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 25px;
+    flex: 1;
+    background-color: rgba(207, 196, 255, 0.373);
+    z-index: 1;
+    /* display: grid; */
+    font-size: 20px;
+    border-radius: 10px;
+    border-right: 5px solid black;
+    height: 90%;
+}
+.essay, .controller, .params{
+    overflow: auto;
+    padding: 20px;
+}
+.essay, .params{
+    display: none;
+    height: 100%;
+}
+#switch_model{
+    margin: 10px;
+    padding: 10px;
+}
+.essay::-webkit-scrollbar, .controller::-webkit-scrollbar {
+    width: 20px;
+    }
+
+@media (max-width: 600px) {
+    .summary {
+        background-color: rgba(207, 196, 255, 0.735);
+        padding: 50px;
+        margin: 30px;
+        position: absolute;
+        height: 60%;
+        display: none;
+    }
+    .essay, .controller{
+        z-index: 1;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .essay{
+        display: none;
+    }
+    .essay::-webkit-resizer, .controller::-webkit-resizer{
+        background-color:rgb(2, 15, 26);
+    }
+    .mobile::-webkit-scrollbar{
+        width: 5px;
+    }
+    .mobile{
+        z-index: 0;
+        overflow: auto;
+    }
+    .closer{
+        display: block;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABiElEQVR4nO2WS04CQRCGv73ElQsVjFGJcBfFtY8TILgweBF3ajyAUXGleBN8nELBDcIEU8lP0mEz3T3DwmT+pJJJT9Xf1dX1aChQIAwbQBt4Bd6AH4l994AWUGEBKAPXwBiYpkgC3AObeW1+AAxEPgLugEOgBixJ7PtI/0bSNZtG1s3PdKKpTrXlYbMNPDrRsCuLPnkCTIDzCPuObJOYSJSdsMds7jphHN/AWojhrRP2rOiKy5LYu9QmSqb5O596iosdcY0V2VS0RWIZTQ4OoEja+qmPAz0pW1nlhRNxPvsof0q5mqMDNXG++ygPpVzK8QpKWjfuVAwW4MCyU46p+JDyLvmhLs7+v0jC1gLLsOnjQEVNY6TBktWBamgjMtyIyKZaVjyJ6yrEaN2pBhsosbgQxxewGmrccMZxJ3Lz2TjeIxJt50HS1WBJQ9UJe6KkzoR9NZDZk8wy+li1XZLUVWoPwK8T9uiTz2MFuPR8lI41+4MeIL4oq5Zf1NWGkr6aTDOk1AoUMPwBNRfEOCBmB7QAAAAASUVORK5CYII=");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 10%;
+        padding: 2.5%;
+        margin: 1%;
+        background-color: rgb(207, 196, 255);
+    }
+    .closer:hover{
+        background-color: rgb(155, 133, 253);
+}
+  }

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sim2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <link href="css/sim_0.css" rel="stylesheet">
+</head>
+<body>
+ 
+        <table>
+            <tr>
+                <td>
+                    <div class="main_">
+                        <div id="sphere">
+                
+                        </div>
+                    </div>
+                </td>
+                <td class="summary">
+                    <h1>Wilson Cowan Demo</h1>
+                    <h2>A demonstration of the Wilson-Cowan Model and divisive gain modulation</h2>
+                    <div class="controller">
+                        <div>
+                            <input type="radio" id="Ini" value="I" name="Population" checked/>
+                            <label for="Ini">(I)<sub>Inhibitory Neural Population</sub></label><br>
+                            
+                            <input type="radio" id="Ex" value="E" name="Population"/>
+                            <label for="Ex">(E)<sub>Excitatory Neural Population</sub></label><br>
+                            
+                            <input type="radio" id="I_E" value="I_E" name="Population"/>
+                            <label for="I_E">(IE)<sub>Entire Population</sub></label><br>
+                            
+                            <input type="radio" id="Alpha" value="Alpha_entrain" name="Population"/>
+                            <label for="Alpha">(AE)<sub>Alpha Entrainment of the entire population</sub></label>   
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+<script src="js/sim2.js"></script>
+</body>
+</html>

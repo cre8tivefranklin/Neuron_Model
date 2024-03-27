@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sim2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="css/sim_0.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container row-2">
+    <div class="main_ mobile" id="canvasdiv">
+      <div id="sphere"></div>
+      <div id="neuron">
+        <div class="mode col row-2">
+          <button onclick="neurocam()" class="btn btn-outline-primary" type="button" id="switch_model" value="Switch" name="Switch Mode">(+)</button>
+          <button onclick="neurocam()" class="btn btn-outline-primary" type="button" id="switch_model" value="Switch" name="Switch Mode">Reset View</button>
+          <button onclick="neurocam()"class="btn btn-outline-primary" type="button" id="switch_model" value="Switch" name="Switch Mode">(-)</button>
+        </div>
+      </div>
+    </div>
+    <div onclick="closer()" class="closer"></div>
+    <div class="summary">  
+      <div class="menu col row-1">
+        <button onclick="display_controller()" type="button" name="main" value="Main" id="toggle_main" class="btn btn-primary">Main</button>
+        <button onclick="display_essay()" type="button" name="about" value="About" id="toggle_about" class="btn btn-primary">About</button>
+        <button onclick="display_params()" type="button" name="parameters" value="About" id="toggle_about" class="btn btn-primary">Parameters</button>
+      </div>
+      <div class="controller" id="controller">
+        <h1>The Wilson Cowan Model</h1>
+          <input type="radio" id="Ini" value="I" name="Population" checked/>
+          <label for="Ini">(I)<sub>Inhibitory Neural Population</sub></label><br>
+                        
+          <input type="radio" id="Ex" value="E" name="Population"/>
+          <label for="Ex">(E)<sub>Excitatory Neural Population</sub></label><br>
+                        
+          <input type="radio" id="I_E" value="I_E" name="Population"/>
+          <label for="I_E">(I+E)<sub>Entire Population</sub></label><br>
+                        
+          <input type="radio" id="Alpha" value="Alpha_entrain" name="Population"/>
+          <label for="Alpha">(AE)<sub>Alpha Entrainment: [I+E]/&Alpha; </sub></label><br>
+
+      </div>
+      <div class="essay" id="essay">        
+        <h2>What is the Wilson-Cowan Model?</h2>
+        <p>
+            Glad you asked! It is a computation that is designed to explain and represent the interaction between neural populations such that they are broken down into two types: Inhibitory and Excitatory. Inhibition is the lack of neuron activity in a neural population and Excitatory is the opposite, the presence of activity. In the WC(Wilson-Cowan) model, a subtractive(or addition) operation is computed to simulate these reactions. Needless to say, there are more factors and operations at play such that they are firing rates, functions representing neuron transfer, and synaptic weights. Sources will be cited below.
+        </p>
+        <h3>Computation:</h3>
+        <p>[(dE/dt) - (dI/dt)] would represent the overall computation of an Inhibitory population combined with an Excitory one.
+            <ul>
+                <li class="Ex_summary">
+                  <p>
+                    Excitatory rate with respect to miliseconds: [dE/dt] = -E + F(<sub>WEE</sub>E - <sub>WEI</sub>I + I<sub>ext</sub>)
+                  </p>
+                  <p> 
+                    WEE, WEI are synaptic weights measured in milivolts or dimensionless.
+                  </p>
+                  <p>
+                    I<sub>ext</sub> expresses external input.
+                  </p>
+                  <p>
+                    F is the transfer function representing population response.
+                  </p>
+                  <p>
+                    E is the firing rate
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Inibitory rate with respect to miliseconds[dI/dt] = -I + F(<sub>WIE</sub>)E - <sub>WII</sub>I + I<sub>ext</sub>
+                  </p>
+                  <p>
+                    WIE, WII: synaptic weights.
+                  </p>
+                  <p>
+                    I<sub>ext</sub> expresses external input.
+                  </p>
+                  <p>
+                    F: transfer function.
+                  </p>
+                  <p>
+                    I is the firing rate.
+                  </p>
+                </li>
+            </ul>
+        </p>
+        <header>Source(s):</header>
+        <article></article>
+    </div>
+    <div class="params" id="params">
+      <p>A slider goes here </p>
+    </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="js\sim2.js"></script>
+  <script src="js\sim2_UI.js"></script>
+</body>
+</html>

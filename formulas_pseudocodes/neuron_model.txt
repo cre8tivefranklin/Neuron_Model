@@ -1,0 +1,31 @@
+function setup() {
+  createCanvas(500, 500, WEBGL);
+  describe("A black line drawn on a gray canvas.");
+}
+
+function draw() {
+  set triangle 
+    [45, -90, 0][0,0,0]
+    [0, -90,0][45, 0,0]
+    [0,0,0][90,0,0]
+
+  set axon
+    [45, -180, 0][45, -90, 0]
+    [45, -180, 0][90, -180, 0]
+
+  set synaptic weights
+    axonTerminal_Y = 0
+    axonTerminal_X = 0
+    Xm = -E or -Ex
+    Ym = -I or -In
+    Zm = F(-E) or Fr_1
+    Yk = -E or -Ex
+    Xk = -I or -In
+    Zk = F(-I) or Fr_2
+  while (axonTerminal_Y === 0 or axonTerminal_X === 0)
+    axonTerminal_Y = [0+Xm, -180, 0+Zm][0+Xk,-180,0+Zk]
+    line(axonTerminal_Y)
+
+    axonTerminal_X = [0 + Xk, -180, 0+Zk][0+Xm -180, 0+Zm]
+    line(axonTerminal_X)
+}
