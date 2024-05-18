@@ -84,7 +84,7 @@ function setup() {
     }
 
     for (let i = 0; i < 1; i++) {
-      drawBranch(x_ini, y_ini, z_ini, 1, 10, 3); // Start with level 1
+      drawBranch(x_ini, y_ini, z_ini, 0.5, 10, 1.5); // Start with level 1
   }
 }
 

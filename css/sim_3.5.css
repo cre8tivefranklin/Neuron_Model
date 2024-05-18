@@ -13,11 +13,19 @@ body{
 .container {
     display: flex;
     height: 100vh;
+    border: solid 2px #0d6efd;
+    border-radius: 2.5%;
+    padding: 10px;
   }
 .main_{
     /* margin: 100px; */
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 90vh;
+}
+.graph{
+  border: solid 5px black;
+  border-radius: 2.5%;
 }
 #sphere, #neuron{
     border-radius: 5px;
@@ -42,7 +50,7 @@ body{
   }
   .value{
     background-color: white;
-    padding: 10px;
+    padding: 5px;
     color: black;
   }
   .value_Sf{
@@ -54,7 +62,7 @@ body{
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
   
   /* Track */
